@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>stripes</title>
+    <style> 
+      * { margin:0; padding:0; } 
+      html { height:100%; }
+      body { overflow:hidden; }    
+      @-webkit-keyframes spin {
+          0% { -webkit-transform: rotate(0deg); }
+         50% { -webkit-transform: rotate(180deg); }
+        100% { -webkit-transform: rotate(360deg); }
+      }
+      @keyframes spin {
+          0% { transform: rotate(0deg); }
+         50% { transform: rotate(180deg); }
+        100% { transform: rotate(360deg); }
+      }
+      div#indicator { 
+        position:absolute; 
+        text-align:center;
+        border-radius:50%;
+        border-right-color:transparent;
+        -webkit-animation:spin 1.2s linear infinite;
+                animation:spin 1.2s linear infinite; 
+      }
+      div#indicatorContainer {
+        position:fixed; left:50%; top:50%;
+        z-index:9999;
+        opacity: 1.0;
+        -webkit-transition:opacity 0.5s ease-out;
+           -moz-transition:opacity 0.5s ease-out;
+             -o-transition:opacity 0.5s ease-out;
+                transition:opacity 0.5s ease-out; 
+      }
+      #stage {
+        opacity:0;
+        vertical-align:bottom;
+        -webkit-transition:opacity 0.5s ease-in; 
+           -moz-transition:opacity 0.5s ease-in; 
+             -o-transition:opacity 0.5s ease-in; 
+                transition:opacity 0.5s ease-in; 
+      }
+    </style>
+    <script>
+      window.indicator = { color:"rgba(0,0,0,0.45)", weight:8, radius:58 }
+    </script>
+  </head>
+  <body>
+    <script src="indicator.0.1.0.js"></script>
+    <script src='libs.js'></script>
+    <script>
+      (Module.cwrap("setup","void",[]))();   
+    </script>
+  </body>
+</html>
