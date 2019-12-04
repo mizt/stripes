@@ -78,9 +78,9 @@ void draw() {
     ctx->plane->end();
   }));
   
-  if(timer<38) {
+  if(timer<60) {
     timer++;
-    if(timer==38) {
+    if(timer==60) {
       EM_ASM({  
         if(window.indicator) window.indicator.stop();
         Module.canvas.style.opacity = 1.0;
